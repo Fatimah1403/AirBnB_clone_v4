@@ -1,11 +1,12 @@
 $(document).ready(function () {
-	const amenitiesId = {};
+	const amenities = {};
 	$('INPUT[type="checkbox"]').change(function () {
-		if (this.checked) {
-			amenitiesId[this.dataset.name] =  this.dataset.id;
-		} else {
-			delete amenitiesId[this.dataset.name];
-		}
-		$(".amenities h4").text(object.values(amenitiesId).sort().join(", "));
-	});
+        if ($(this).is(':checked')) {
+            amenities[$(this).attr('data-id')] = $(this).attr('data-name');
+        } else {
+            delete amenities[$(this).attr('data-id')];
+        }
+        $('.amenities h4').text(Object.values(amenities).join(', '));
+    });
+		
 });
