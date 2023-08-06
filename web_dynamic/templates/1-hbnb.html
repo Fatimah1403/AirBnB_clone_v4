@@ -3,16 +3,16 @@
 	<head>
 		<title>AirBnB clone</title>
 
-		<link rel="shortcut icon" href="{{ url_for('static', filename='images/icon.png') }}?cache_id={{ cache_id }}"/>
+		<link rel="shortcut icon" href="{{ url_for('static', filename='images/icon.png') }}?{{ cache_id }}"/>
 		
-		<link rel="stylesheet" href="{{ url_for('static', filename='styles/4-common.css') }}?cache_id={{ cache_id }}"/>
-		<link rel="stylesheet" href="{{ url_for('static', filename='styles/3-header.css') }}?cache_id={{ cache_id }}"/>
-		<link rel="stylesheet" href="{{ url_for('static', filename='styles/3-footer.css') }}?cache_id={{ cache_id }}"/>
-		<link rel="stylesheet" href="{{ url_for('static', filename='styles/6-filters.css') }}?cache_id={{ cache_id }}"/>
-		<link rel="stylesheet" href="{{ url_for('static', filename='styles/8-places.css') }}?cache_id={{ cache_id }}"/>
+		<link rel="stylesheet" href="{{ url_for('static', filename='styles/4-common.css') }}?{{ cache_id }}"/>
+		<link rel="stylesheet" href="{{ url_for('static', filename='styles/3-header.css') }}?{{ cache_id }}"/>
+		<link rel="stylesheet" href="{{ url_for('static', filename='styles/3-footer.css') }}?{{ cache_id }}"/>
+		<link rel="stylesheet" href="{{ url_for('static', filename='styles/6-filters.css') }}?{{ cache_id }}"/>
+		<link rel="stylesheet" href="{{ url_for('static', filename='styles/8-places.css') }}?{{ cache_id }}"/>
 
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="{{ url_for('static', filename='scripts/1-hbnb.js') }}?cache_id={{ cache_id }}"></script>
+        <script src="{{ url_for('static', filename='scripts/1-hbnb.js') }}?{{ cache_id }}"></script>
 	</head>
     <body>
 		<header>
@@ -48,7 +48,8 @@
                     <ul class="popover">
                         {% for amenity in amenities.values()|sort(attribute="name") %}
                             <li>
-                                 <input type="checkbox" data-id="{{ amenity.id }}" data-name="{{ amenity.name }}">{{ amenity.name }}</input>
+                                 <input type="checkbox" data-id="{{ amenity.id }}" data-name="{{ amenity.name }}"/>
+                                 <label for={{ amenity.id }}>{{ amenity.name }}</label>
                             </li>
                         {% endfor %}
                     </ul>
