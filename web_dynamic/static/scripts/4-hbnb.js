@@ -23,14 +23,14 @@ $(document).ready(function () {
     });
 });
 
-//task 3-hbnh.js - fatch data about places.
+//task 4-hbnh.js - fatch data about places filtered.
 
-function getPlaces() {
+function getPlaces(amen) {
     $.ajax({
         type: 'POST',
         url: 'http://0.0.0.0:5001/api/v1/places_search/',
         contentType: 'application/json',
-        data: JSON.stringify({}),
+        data: JSON.stringify({'amenities' : amen}),
         success: function (data) {
            const placesSection =  $('section.places');
            data.forEach(function (place) {
@@ -63,5 +63,15 @@ function getPlaces() {
         },
 
     });
-    getPlaces();
+    $('#api_status button').click(function () {
+        const amenities = {};
+        $('INPUT[type="checkbox"]').change(function () {
+        if ($(this).is(':checked')) {
+            amenities[$(this).attr('data-id')] = $(this).attr('data-name');
+        } else {
+            delete amenities[$(this).attr('data-id')];
+        }
+        const amen = amenities.keys();
+        getPlaces(amen);
+    });
 }
