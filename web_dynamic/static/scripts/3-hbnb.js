@@ -8,6 +8,7 @@ $('document').ready(function () {
       }
       $('.amenities h4').text(Object.values(amenities).join(', '));
     });
+
     
     // Function to update the API status
     function updateApiStatus() {
@@ -25,9 +26,7 @@ $('document').ready(function () {
     // Refresh status every 5 seconds
     setInterval(updateApiStatus, 5000);
 
-    // 3-hbnb.js
-
-
+    // 3-hbnb.j
 
   // Function to send a POST request and get places data
   function getPlacesData() {
@@ -84,3 +83,4 @@ $('document').ready(function () {
   }
 
 });
+

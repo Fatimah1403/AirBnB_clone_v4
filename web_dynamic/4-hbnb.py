@@ -14,7 +14,7 @@ import uuid
 app = Flask(__name__)
 
 
-@app.route("/3-hbnb", strict_slashes=False)
+@app.route("/4-hbnb", strict_slashes=False)
 def hbnb():
     """Display the HTML page for hbnb home page."""
     """Cache_id"""
@@ -22,7 +22,7 @@ def hbnb():
     amenities = storage.all("Amenity")
     places = storage.all("Place")
     states = storage.all("State")
-    return render_template("3-hbnb.html",
+    return render_template("4-hbnb.html",
                            amenities=amenities,
                            places=places,
                            states=states,

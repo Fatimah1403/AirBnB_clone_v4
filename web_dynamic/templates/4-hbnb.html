@@ -12,11 +12,12 @@
 		<link rel="stylesheet" href="{{ url_for('static', filename='styles/8-places.css') }}?{{ cache_id }}"/>
 
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="{{ url_for('static', filename='scripts/1-hbnb.js') }}?{{ cache_id }}"></script>
+        <script src="{{ url_for('static', filename='scripts/4-hbnb.js') }}?{{ cache_id }}"></script>
 	</head>
     <body>
 		<header>
 			<div id="header_logo"></div>
+            <div id="api_status"></div>
 		</header>
 		<div class="container">
 			<section class="filters">
@@ -59,30 +60,7 @@
 			<section class="places">
 				<h1>Places</h1>
                 {% for place in places.values() | sort(attribute="name") %}
-                    <article>
-                        <div class="headline">
-                            <h2>{{ place.name }}</h2>
-                            <div class="price_by_night"> &#36;{{ place.price_by_night }}</div>
-                        </div>
-                        <div class="information">
-                            <div class="max_guest">
-                                <div class="guest_icon"></div>
-                                <p>{{ place.max_guest }} Guests</p>
-                            </div>
-                            <div class="number_rooms">
-                                <div class="bed_icon"></div>
-                                <p>{{ place.number_rooms }} Rooms</p>
-                            </div>
-                            <div class="number_bathrooms">
-                                <div class="bath_icon"></div>
-                                <p>{{ place.number_bathrooms }} Bathrooms</p>
-                            </div>
-                        </div>
-                        <div class="user"><b>Owner</b>: {{ place.user.first_name }} {{ place.user.last_name }}</div>
-                        <div class="description">
-                            {{ place.description | safe }}
-                        </div>
-                    </article>
+                
                 {% endfor %}
 			</section>
 		</div>
