@@ -3,6 +3,7 @@
 	justify-content: center;
 	flex-wrap: wrap;
 	margin: 45px auto;
+	
 	text-align: center;
 }
 
@@ -127,4 +128,12 @@ article h2 {
 	background-position: center;
     width: 50px;
     height: 50px;
+}
+#error-message {
+	color: #FF5A5F;
+	font-size: 20px;
+	margin-left: 35px;
+}
+.container h1{
+	margin: 15px 0;
 }
