@@ -14,7 +14,7 @@ import uuid
 app = Flask(__name__)
 
 
-@app.route("/4-hbnb", strict_slashes=False)
+@app.route('/4-hbnb/', strict_slashes=False)
 def hbnb():
     """Display the HTML page for hbnb home page."""
     """Cache_id"""
@@ -36,4 +36,4 @@ def teardown(excpt=None):
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+    app.run(host="localhost", port=5000)

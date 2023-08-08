@@ -14,7 +14,7 @@ import uuid
 app = Flask(__name__)
 
 
-@app.route("/1-hbnb", strict_slashes=False)
+@app.route('/1-hbnb/', strict_slashes=False)
 def hbnb():
     """Display the HTML page for hbnb home page."""
     """Cache_id"""
