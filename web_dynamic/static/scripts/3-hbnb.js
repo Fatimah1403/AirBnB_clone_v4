@@ -12,7 +12,7 @@ $('document').ready(function () {
     
     // Function to update the API status
     function updateApiStatus() {
-        $.get("http://0.0.0.0:5001/api/v1/status/", function(data) {
+        $.get("http://localhost:5001/api/v1/status/", function(data) {
             if (data.status === "OK") {
                 $("#api_status").addClass("available");
             } else {
@@ -32,7 +32,7 @@ $('document').ready(function () {
   function getPlacesData() {
     $.ajax({
       type: 'POST',
-      url: 'http://0.0.0.0:5001/api/v1/places_search',
+      url: 'http://localhost:5001/api/v1/places_search',
       contentType: 'application/json',
       data: JSON.stringify({}), // Empty dictionary as the body
       success: function (data) {
@@ -58,6 +58,9 @@ $('document').ready(function () {
                 <div class="bath_icon"></div>
                 <p>${place.number_bathrooms} Bathroom${place.number_bathrooms !== 1 ? 's' : ''}</p>
               </div>
+            </div>
+            <div class="user">
+                 <b>Owner:</b> ${place.user.first_name} ${place.user.last_name}
             </div>
             <div class="description">
               ${place.description}
